@@ -10,12 +10,23 @@ function calculateTimeForLongitude(longitude, baseTime = new Date()) {
     });
 }
 
-function testLongitudeLogic() {
-    console.log("--- Longitude Time Table (Logic Test) ---");
+function renderTable() {
+    const container = document.getElementById('time-table');
+    container.innerHTML = ''; // Clear the "Loading..." message
+
     for (let deg = 0; deg <= 350; deg += 10) {
         const time = calculateTimeForLongitude(deg);
-        console.log(`${deg}°: ${time}`);
+        
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <div class="degree">${deg}°</div>
+            <div class="time">${time}</div>
+        `;
+        
+        container.appendChild(card);
     }
 }
 
-testLongitudeLogic();
+// Render the UI immediately
+renderTable();
