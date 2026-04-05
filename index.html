@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Longitude Time Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Longitude vs. Time</h1>
-    <p class="subtitle">This app shows the local time for every 10 degrees of longitude.</p>
-    
-    <div id="time-table">
-        <p>Loading times...</p>
+    <div class="container">
+        <header>
+            <h1>Longitude vs. Time</h1>
+            <p class="subtitle">Real-time local time calculation based on Earth's rotation.</p>
+        </header>
+
+        <div class="controls">
+            <button class="btn active" data-format="0-360">0° to 350°</button>
+            <button class="btn" data-format="180-180">-180° to +180° (E/W)</button>
+        </div>
+        
+        <div id="time-table">
+            <p>Loading times...</p>
+        </div>
     </div>
 
     <script src="script.js"></script>
